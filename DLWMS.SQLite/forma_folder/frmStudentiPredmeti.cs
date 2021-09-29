@@ -95,5 +95,18 @@ namespace DLWMS.WinForms.forma_folder
             public string ImePrezime{ get; set; }
             public List<StudentiPredmeti> Polozeni{ get; set; }
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var predmet = dgvPolozeniPredmeti.SelectedRows[0].DataBoundItem as StudentiPredmeti;
+            if(MessageBox.Show("Jeste li sigurni da zelite ukloniti polozeni predmet?",
+                "Ukloni polozeni predmet", 
+                MessageBoxButtons.YesNo)==DialogResult.Yes)
+            {
+                _baza.StudentiPredmeti.Remove(predmet);
+                _baza.SaveChanges();
+                UcitajPodatkeOPredmetima();
+            }
+        }
     }
 }

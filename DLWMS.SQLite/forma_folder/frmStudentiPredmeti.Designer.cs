@@ -34,6 +34,8 @@ namespace DLWMS.WinForms.forma_folder
             this.Predmet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ocjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatumPolaganja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cmbPredmet = new System.Windows.Forms.ComboBox();
             this.cmbOcjena = new System.Windows.Forms.ComboBox();
             this.dtpDatumPolaganja = new System.Windows.Forms.DateTimePicker();
@@ -41,6 +43,7 @@ namespace DLWMS.WinForms.forma_folder
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPolozeniPredmeti)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +59,9 @@ namespace DLWMS.WinForms.forma_folder
             this.dgvPolozeniPredmeti.Location = new System.Drawing.Point(10, 73);
             this.dgvPolozeniPredmeti.Name = "dgvPolozeniPredmeti";
             this.dgvPolozeniPredmeti.ReadOnly = true;
+            this.dgvPolozeniPredmeti.RowTemplate.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvPolozeniPredmeti.RowTemplate.Height = 25;
+            this.dgvPolozeniPredmeti.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPolozeniPredmeti.Size = new System.Drawing.Size(431, 179);
             this.dgvPolozeniPredmeti.TabIndex = 0;
             // 
@@ -82,6 +87,20 @@ namespace DLWMS.WinForms.forma_folder
             this.DatumPolaganja.HeaderText = "Datum polaganja";
             this.DatumPolaganja.Name = "DatumPolaganja";
             this.DatumPolaganja.ReadOnly = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(205, 26);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
+            this.toolStripMenuItem1.Text = "Ukloni polozeni predmet";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // cmbPredmet
             // 
@@ -153,6 +172,7 @@ namespace DLWMS.WinForms.forma_folder
             this.Text = "Polozeni predmeti";
             this.Load += new System.EventHandler(this.frmStudentiPredmeti_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPolozeniPredmeti)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);
 
@@ -170,5 +190,7 @@ namespace DLWMS.WinForms.forma_folder
         private System.Windows.Forms.DataGridViewTextBoxColumn DatumPolaganja;
         private System.Windows.Forms.ErrorProvider err;
         private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
